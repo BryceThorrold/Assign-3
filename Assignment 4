@@ -1,0 +1,36 @@
+best <- function(state, outcome) {
+ ## Read outcome data, looking at state and outcome
+  
+  outcomestats <- read.csv("outcome-of-care-measures.csv", colClasses = "character")
+  
+  
+  ## Key Variables
+  ## Hospital.NAme
+  ## State
+
+   ## Check that state and outcome are valid
+  
+      statefound<- grep(state, outcomestats$State)
+      if (length(statefound) == 0) {
+      print("State not Found")
+      }
+  
+      
+      validoutcomes <- c("heart attack", "heart failure", "pneumonia")
+      outcomefound <- grep(outcome, validoutcomes)
+      if (length(outcomefound) == 0){
+      print("Outcome invalid")  
+      }
+  
+      
+      print("We good to go")
+    ## Return hospital name in that state with lowest 30-day death rate
+  
+      ## Create a matrix with state and outcome equal to inputs, with the hospital 
+      ## name and 30 - day death rate
+  
+  
+      ## sort on death rate and print top row
+  
+  
+}
